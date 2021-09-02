@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service-One.Web", "src\Service-One.Web\Service-One.Web.csproj", "{BE421EDF-59CF-4905-8B0E-2135020437E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{2271F81C-D061-44CD-8774-1F01BDD8F6F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service-One.Tests", "src\Service-One.Tests\Service-One.Tests.csproj", "{30F27E61-5431-4662-BF83-76E91C4AD616}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE421EDF-59CF-4905-8B0E-2135020437E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE421EDF-59CF-4905-8B0E-2135020437E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE421EDF-59CF-4905-8B0E-2135020437E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE421EDF-59CF-4905-8B0E-2135020437E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F27E61-5431-4662-BF83-76E91C4AD616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F27E61-5431-4662-BF83-76E91C4AD616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F27E61-5431-4662-BF83-76E91C4AD616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F27E61-5431-4662-BF83-76E91C4AD616}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30F27E61-5431-4662-BF83-76E91C4AD616} = {2271F81C-D061-44CD-8774-1F01BDD8F6F8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B943D1D2-EF50-4358-B47B-F343A1D188B5}
+	EndGlobalSection
+EndGlobal
