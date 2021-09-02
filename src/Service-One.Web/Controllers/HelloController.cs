@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Service_One.Web.Services;
+using System.Threading.Tasks;
 
 namespace Service_One.Web.Controllers
 {
@@ -6,10 +8,17 @@ namespace Service_One.Web.Controllers
     [ApiController]
     public class HelloController : ControllerBase
     {
-        [HttpGet]
-        public string Get()
+        private readonly ServiceTwo serviceTwo;
+
+        public HelloController(ServiceTwo serviceTwo)
         {
-            return "Hello";
+            this.serviceTwo = serviceTwo;
+        }
+
+        [HttpGet]
+        public async Task<string> Get()
+        {
+            return await this.serviceTwo.GetGreeting();
         }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Service_One.Web.Services;
 
 namespace Service_One.Web
 {
@@ -19,6 +20,8 @@ namespace Service_One.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddScoped<ServiceTwo>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
