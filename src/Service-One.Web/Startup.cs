@@ -23,6 +23,16 @@ namespace Service_One.Web
 
             services.AddScoped<ServiceTwo>();
 
+            services.AddCors(opt =>
+            {
+                opt.AddDefaultPolicy(builder =>
+                {
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyHeader();
+                    builder.AllowAnyOrigin();
+                });
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -39,6 +49,8 @@ namespace Service_One.Web
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Service_One.Web v1"));
             }
+
+            app.UseCors();
 
             app.UseHttpsRedirection();
 
