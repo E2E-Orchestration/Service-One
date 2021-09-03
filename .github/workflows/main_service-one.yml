@@ -42,14 +42,11 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-    - name: Download artifact from build job
-      uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v2
       with:
         name: .net-app
 
-    - name: Deploy to Azure Web App
-      id: deploy-to-webapp
-      uses: azure/webapps-deploy@v2
+    - uses: azure/webapps-deploy@v2
       with:
         app-name: 'service-one'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_b6a300ac738f4191be4784c94492396d }}
