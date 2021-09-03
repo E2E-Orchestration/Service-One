@@ -54,7 +54,7 @@ jobs:
     
     - uses: azure/login@v1
       with:
-        creds: '${{ secrets.AZURE_CREDENTIALS_TEST }}'
+        creds: '${{ secrets.AZURE_CREDENTIAL_TEST }}'
     
     - uses: azure/appservice-settings@v1
       with:
