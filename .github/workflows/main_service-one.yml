@@ -64,7 +64,7 @@ jobs:
           [
             {
               "name": "ServiceTwoUrl",
-              "value": "https://service-two.azurewebsites.net/",
+              "value": "https://service-two.azurewebsites.net/appi/",
               "slotSetting": false
             }
           ]
