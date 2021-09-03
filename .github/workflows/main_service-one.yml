@@ -52,7 +52,6 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'service-one'
-        slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_b6a300ac738f4191be4784c94492396d }}
         package: .
 
@@ -64,6 +63,7 @@ jobs:
           [
             {
               "name": "ServiceTwoUrl",
-              "value": "https://service-two.azurewebsites.net/api/"
+              "value": "https://service-two.azurewebsites.net/",
+              "slotSetting": false
             }
           ]
