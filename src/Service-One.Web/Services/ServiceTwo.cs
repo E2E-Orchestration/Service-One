@@ -29,5 +29,10 @@ namespace Service_One.Web.Services
 
             return $"{ServiceOneGreeting}{svcTwoGreetingText}";
         }
+
+        public string GetServiceTwoUrl()
+        {
+            return ServiceTwoUrl;
+        }
     }
 }

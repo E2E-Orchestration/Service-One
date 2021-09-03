@@ -20,5 +20,11 @@ namespace Service_One.Web.Controllers
         {
             return await this.serviceTwo.GetGreeting();
         }
+
+        [HttpGet("serviceTwo")]
+        public string GetUrl()
+        {
+            return serviceTwo.GetServiceTwoUrl();
+        }
     }
 }
