@@ -41,19 +41,6 @@ jobs:
       name: 'dev'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
-    - uses: azure/appservice-settings@v1
-        with:
-          app-name: 'service-one'
-          mask-inputs: false
-          app-settings-json: |
-            [
-              {
-                "name": "ServiceTwoUrl",
-                "value": "https://service-two.azurewebsites.net/api/"
-              }
-            ]
-
-
     steps:
     - name: Download artifact from build job
       uses: actions/download-artifact@v2
@@ -68,3 +55,15 @@ jobs:
         slot-name: 'dev'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_b6a300ac738f4191be4784c94492396d }}
         package: .
+
+    - uses: azure/appservice-settings@v1
+      with:
+        app-name: 'service-one'
+        mask-inputs: false
+        app-settings-json: |
+          [
+            {
+              "name": "ServiceTwoUrl",
+              "value": "https://service-two.azurewebsites.net/api/"
+            }
+          ]
