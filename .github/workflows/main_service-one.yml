@@ -23,7 +23,7 @@ jobs:
         include-prerelease: true
 
     - name: Build with dotnet
-      run: dotnet build -c $BUILD_CONFIGURATION
+      run: dotnet build -c ${{env.BUILD_CONFIGURATION}}
 
     - name: dotnet publish
       run: dotnet publish -c ${{env.BUILD_CONFIGURATION}} src/Service-One.Web -o ${{env.DOTNET_ROOT}}/myapp
