@@ -6,6 +6,9 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  BUILD_CONFIGURATION: Release
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,10 +23,10 @@ jobs:
         include-prerelease: true
 
     - name: Build with dotnet
-      run: dotnet build --configuration Release
+      run: dotnet build -c $BUILD_CONFIGURATION
 
     - name: dotnet publish
-      run: dotnet publish -c Release src/Service-One.Web -o ${{env.DOTNET_ROOT}}/myapp
+      run: dotnet publish -c ${{env.BUILD_CONFIGURATION}} src/Service-One.Web -o ${{env.DOTNET_ROOT}}/myapp
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
@@ -41,7 +44,7 @@ jobs:
         uses: actions/setup-dotnet@v1.8.1
 
       - name: run tests
-        run: dotnet test --configuration Release
+        run: dotnet test -c ${{env.BUILD_CONFIGURATION}}
 
   deploy-dev:
     runs-on: ubuntu-latest

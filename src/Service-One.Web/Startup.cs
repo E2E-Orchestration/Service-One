@@ -33,6 +33,7 @@ namespace Service_One.Web
                 });
             });
 
+            services.AddHealthChecks();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -60,6 +61,7 @@ namespace Service_One.Web
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapHealthChecks("/healthcheck");
                 endpoints.MapControllers();
             });
         }
